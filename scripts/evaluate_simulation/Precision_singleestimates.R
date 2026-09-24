@@ -143,6 +143,11 @@ pl_prec <- ggplot(data = df_res, aes(x = n_1000, y = est_exp, ymin = cil_exp, ym
   theme_minimal(base_size = 13) +
   theme(panel.border =  element_rect(color = "black", fill = NA, linewidth = 0.5))
 
+# Save results
+df_res_prec <- df_res
+saveRDS(df_res_prec, file = "df_res_prec.rds")
+save(df_res_prec, file = "df_res_prec.rda")
+
 # Save as pdf
 ggsave("pl_prec.pdf", plot = pl_prec, width = 5.63, height = 2.25)
 

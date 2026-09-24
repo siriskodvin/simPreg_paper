@@ -182,4 +182,9 @@ pl_se <- ggplot(data = df_res_tab, aes(x = se_log_mean, y = se_log_sim, color = 
 # Save as pdf
 ggsave("pl_se.pdf", plot = pl_se, width = 4.5, height = 2.25)
 
+# Save results
+df_res_se <- df_res
+saveRDS(df_res_se, file = "df_res_se.rds")
+save(df_res_se, file = "df_res_se.rda")
+
 
